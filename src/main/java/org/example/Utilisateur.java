@@ -8,7 +8,7 @@ public class Utilisateur {
     }
 
     public void sinscrire(){
-    new Client(     "nom", "prenom", "adresse", 1234, 123456789, "pseudo", "mdp");
+    new Client(     "nom", "prenom", "adresse", "pseudo", "mdp");
     }
 
     public void voirCatalogue(){

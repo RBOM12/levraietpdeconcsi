@@ -8,17 +8,10 @@ public class Client extends Compte{
     private String prenom;
     private String adresse;
 
-
-    public Client(String nom, String prenom, String adresse, int codeCB, int numCB, String pseudo, String mdp){
-        this.mdp = mdp;
-        this.pseudo = pseudo;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.codeCB = codeCB;
-        this.numCB = numCB;
-
+    public Client(String nom, String prenom, String adresse, String pseudo, String mdp) {
+        super(nom, prenom, adresse, pseudo, mdp);
     }
+
 
     public void acheterProduit(int quantite, Produit produit,Marchand marchand){
         if(produit.getQuantite() >= quantite){
