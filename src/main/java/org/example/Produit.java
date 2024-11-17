@@ -5,9 +5,9 @@ public class Produit {
     private String nomProduit;
     private int idProduit;
     private int quantiteProduit;
-    private long prixProduit;
+    private float prixProduit;
 
-    public Produit(String nomProduit, int idProduit, int quantiteProduit, long prixProduit){
+    public Produit(String nomProduit, int idProduit, int quantiteProduit, float prixProduit){
         this.nomProduit=nomProduit;
         this.idProduit=idProduit;
         this.quantiteProduit=quantiteProduit;
@@ -38,11 +38,11 @@ public class Produit {
         this.quantiteProduit = quantiteProduit;
     }
 
-    public long getPrixProduit() {
+    public float getPrixProduit() {
         return prixProduit;
     }
 
-    public void setPrixProduit(long prixProduit) {
+    public void setPrixProduit(float prixProduit) {
         this.prixProduit = prixProduit;
     }
 }

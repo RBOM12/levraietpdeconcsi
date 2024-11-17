@@ -12,13 +12,14 @@ public class Client extends Compte{
         super(nom, prenom, adresse, pseudo, mdp);
     }
 
+    /*public void passerCommande( Marchand m, Produit p, int quantite){
+        new Commande();
+    }
+    Il faudrait mettre au clair la commmande a t elle un nom propre ou le nom du commercant ?
+    et sa relation avec produit est inexistante avec produit
+     */
 
-    public void acheterProduit(int quantite, Produit produit,Marchand marchand){
-        if(produit.getQuantite() >= quantite){
-            produit.setQuantite(produit.getQuantite() - quantite);
-            marchand.setSolde(marchand.getSolde() + quantite * produit.getPrix());
-        }
-
+    public void getCommandes(){
 
     }
 }

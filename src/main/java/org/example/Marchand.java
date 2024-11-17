@@ -6,9 +6,27 @@ public class Marchand extends Compte {
         super(nom, prenom, adresse, pseudo, mdp);
     }
 
-    public void ajouterProduit(){
+    public void ajouterProduit(Produit p){
+        new Produit("nom", 3, 5, 1.5F);
+    }
+
+    public void modifierProduit(Produit p){
 
     }
+
+    public void supprimerProduit(Produit p){
+        p= null;
+    }
+
+    public void getCommandes(){
+
+    }
+
+    public void getProduits(){
+
+    }
+
+
 
 
 }

@@ -2,13 +2,13 @@ package org.example;
 
 public class Utilisateur {
 
-    public void seconnecter( String nom, String motDePasse){
+    public void seConnecter( String nom, String motDePasse){
         System.out.println("Connexion réussie");
 
     }
 
-    public void sinscrire(){
-    new Client(     "nom", "prenom", "adresse", "pseudo", "mdp");
+    public void sInscrire(){
+    new Client("nom", "prenom", "adresse", "pseudo", "mdp");
     }
 
     public void voirCatalogue(){

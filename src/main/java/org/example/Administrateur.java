@@ -8,7 +8,7 @@ public class Administrateur extends Compte{
     }
 
     public void supprimerCompte( Compte compte){
-
+        compte= null;
     }
 
     public void modifierCompte(Compte compte){
