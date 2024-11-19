@@ -2,17 +2,22 @@ package org.example;
 
 public class Produit {
 
+    private static int compteur = 0;
     private String nomProduit;
     private int idProduit;
     private int quantiteProduit;
     private float prixProduit;
+    private Marchand marchand;
 
-    public Produit(String nomProduit, int idProduit, int quantiteProduit, float prixProduit){
+    public Produit(String nomProduit, float prixProduit, Marchand marchand) {
+        compteur++;
         this.nomProduit=nomProduit;
-        this.idProduit=idProduit;
-        this.quantiteProduit=quantiteProduit;
+        this.idProduit=compteur;
         this.prixProduit=prixProduit;
+        this.marchand=marchand;
     }
+
+
 
     public String getNomProduit() {
         return nomProduit;
@@ -26,17 +31,6 @@ public class Produit {
         return idProduit;
     }
 
-    public void setIdProduit(int idProduit) {
-        this.idProduit = idProduit;
-    }
-
-    public int getQuantiteProduit() {
-        return quantiteProduit;
-    }
-
-    public void setQuantiteProduit(int quantiteProduit) {
-        this.quantiteProduit = quantiteProduit;
-    }
 
     public float getPrixProduit() {
         return prixProduit;

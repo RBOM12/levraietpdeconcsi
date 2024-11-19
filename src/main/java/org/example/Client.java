@@ -1,25 +1,36 @@
 package org.example;
 
-public class Client extends Compte{
+import java.util.ArrayList;
 
-    private String mdp;
-    private String pseudo;
-    private String nom;
-    private String prenom;
-    private String adresse;
+public class Client extends Compte{
+    private Commande panier ;
+    private ArrayList<Commande> histoCommandes;
 
     public Client(String nom, String prenom, String adresse, String pseudo, String mdp) {
         super(nom, prenom, adresse, pseudo, mdp);
+        this.panier = new Commande(this);
+        this.histoCommandes = new ArrayList<Commande>();
     }
 
-    /*public void passerCommande( Marchand m, Produit p, int quantite){
-        new Commande();
+
+
+    public void ajouterProduitPanier(Produit p, int quantite){
+        this.panier.addProduit(p, quantite);
     }
-    Il faudrait mettre au clair la commmande a t elle un nom propre ou le nom du commercant ?
-    et sa relation avec produit est inexistante avec produit
-     */
+
+    public void passercommande(){
+        this.histoCommandes.add(this.panier);
+        this.panier = new Commande(this);
+
+    }
+
 
     public void getCommandes(){
 
     }
+    public void payer (float montant){
+        System.out.println("Paiement de "+montant+"€ effectué");
+
+    }
 }
+

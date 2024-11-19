@@ -5,15 +5,15 @@ import java.util.HashMap;
 public class Commande {
     private static int compteurCommande = 0;
     private int idCommande;
-    private float prixCommande;
     private Client client;
-    private HashMap<Produit, Integer> hashProduits = new HashMap<Produit, Integer>();
+    private HashMap<Produit, Integer> hashProduits;
 
 
     public Commande( Client c) {
         this.client = c;
         compteurCommande++;
         this.idCommande = compteurCommande;
+        hashProduits = new HashMap<Produit, Integer>();
     }
 
     /*public void passerCommande(Marchand m){
@@ -34,11 +34,14 @@ public class Commande {
     }
 
     public float getPrixCommande() {
+        float prixCommande = 0;
         for (Produit p : this.hashProduits.keySet()){
-            this.prixCommande += p.getPrixProduit() * this.hashProduits.get(p);
+            prixCommande += p.getPrixProduit() * this.hashProduits.get(p);
         }
         return prixCommande;
     }
 
-
+    public HashMap<Produit, Integer> getHashProduits() {
+        return this.hashProduits;
+    }
 }
