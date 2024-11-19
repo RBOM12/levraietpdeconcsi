@@ -16,12 +16,6 @@ public class Commande {
         hashProduits = new HashMap<Produit, Integer>();
     }
 
-    /*public void passerCommande(Marchand m){
-
-    }
-   Donc seul le commerçant passe commande ou on passe commande à un commercant ?
-     */
-
     public void addProduit(Produit p, int quantite){
         if (this.hashProduits.containsKey(p)){
             this.hashProduits.put(p, this.hashProduits.get(p) + quantite);

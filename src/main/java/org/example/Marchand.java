@@ -62,19 +62,6 @@ public class Marchand extends Compte  {
 
     }
 
-
-
-
-    public void envoyerProduit(int quantite, Commande c){
-        if (c.p.getQuantiteProduit()>=quantite){
-            p.setQuantiteProduit(p.getQuantiteProduit()-quantite);
-        }else{
-            System.out.println("Quantité insuffisante");
-        }
-
-
-    }
-
     public void envoyerCommande (Commande c){
         mesCommandes.add(c);
     }

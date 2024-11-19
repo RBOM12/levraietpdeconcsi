@@ -1,4 +1,4 @@
-package example;
+package org.example;
 
 import static org.junit.Assert.*;
 
@@ -12,3 +12,4 @@ public class utilisateurTest {
     public void sinscrire() {
     }
 }
+
