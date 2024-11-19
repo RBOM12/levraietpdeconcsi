@@ -39,4 +39,8 @@ public class Produit {
     public void setPrixProduit(float prixProduit) {
         this.prixProduit = prixProduit;
     }
+
+    public Marchand getMarchand() {
+        return marchand;
+    }
 }

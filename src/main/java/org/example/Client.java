@@ -18,12 +18,13 @@ public class Client extends Compte{
         this.panier.addProduit(p, quantite);
     }
 
-    public void passercommande(){
+    public void passercommande() throws Exception {
         this.histoCommandes.add(this.panier);
+        this.panier.envoieProduits();
         this.panier = new Commande(this);
 
-    }
 
+    }
 
     public void getCommandes(){
 

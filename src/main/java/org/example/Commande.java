@@ -44,4 +44,10 @@ public class Commande {
     public HashMap<Produit, Integer> getHashProduits() {
         return this.hashProduits;
     }
+
+    public void envoieProduits() throws Exception {
+        for (Produit p : this.hashProduits.keySet()){
+            p.getMarchand().retirerQuantiteProduit(p, this.hashProduits.get(p));
+        }
+    }
 }
