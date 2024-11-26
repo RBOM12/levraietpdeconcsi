@@ -5,6 +5,12 @@ import java.util.HashMap;
 public class Utilisateur {
     private HashMap<String, Compte> hashComptes = new HashMap<String, Compte>();
 
+    private Catalogue catalogue;
+
+    public Utilisateur() {
+        this.catalogue = new Catalogue();
+    }
+
     public Compte connexion( String pseudo, String motDePasse)throws Exception{
         if (this.hashComptes.containsKey(pseudo)){
             Compte compte = this.hashComptes.get(pseudo);
@@ -37,8 +43,14 @@ public class Utilisateur {
         }
     }
 
-    public void voirCatalogue(){
-        System.out.println("Catalogue");
+    public void voirMarchands(){
+        System.out.println("Liste des marchands");
+        this.catalogue.getMarchands();
+    }
+
+    public void voirProduitMarchands(Marchand marchand){
+        System.out.println("Liste des produits du marchand");
+        marchand.getProduits();
     }
 
 }

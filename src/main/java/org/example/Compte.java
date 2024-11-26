@@ -47,4 +47,8 @@ public class Compte {
     public String getAdresse() {
         return adresse;
     }
+
+    public void voirCatalogue(){
+        System.out.println("Catalogue");
+    }
 }

@@ -49,6 +49,7 @@ public class Marchand extends Compte  {
     public void modifierNomProduit(Produit p, String nom){
         p.setNomProduit(nom);
     }
+
     public void modifierPrixProduit(Produit p, float prix) throws Exception {
         if (prix<0){
             throw new Exception("Prix négatif");
@@ -59,8 +60,18 @@ public class Marchand extends Compte  {
 
     public void supprimerProduit(Produit p){
         this.mesProduits.remove(p);
-
     }
+
+    public void modifierQuantiteProduit(Produit p, int quantite) throws Exception {
+        if (quantite<0){
+            throw new Exception("Quantité négative");
+        }
+        int q = this.mesProduits.get(p) - quantite;
+
+
+        this.mesProduits.put(p, q);
+    }
+
 
     public void envoyerCommande (Commande c){
         mesCommandes.add(c);
@@ -71,6 +82,15 @@ public class Marchand extends Compte  {
 
     public void getProduits(){
 
+    }
+
+    public Produit choisirProduit(String nom){
+        for (Produit produit : this.mesProduits.keySet()){
+            if (produit.getNomProduit().equals(nom)){
+                return produit;
+            }
+        }
+        return null;
     }
 
 
