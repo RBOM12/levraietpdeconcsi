@@ -7,8 +7,9 @@ import java.util.Scanner;
 public class Marchand extends Compte  {
 
     HashMap<Produit,Integer> mesProduits = new HashMap<Produit,Integer>();
-    ArrayList<Commande> mesCommandes = new ArrayList<Commande>();
+    HashMap<Produit,Integer> mesVentes = new HashMap<Produit,Integer>();
     GestionUI g = new GestionUI();
+
 
     public Marchand(String nom, String prenom, String adresse, String pseudo, String mdp) {
         super(nom, prenom, adresse, pseudo, mdp);
@@ -46,6 +47,25 @@ public class Marchand extends Compte  {
             }
             this.mesProduits.put(p, this.mesProduits.get(p)-quantite);
         }
+
+    }
+
+    public void venteProduit(String nom, int quantite) throws Exception {
+        Produit p = getProduit(nom);
+        if (this.mesProduits.containsKey(p)){
+            if (this.mesProduits.get(p)<quantite){
+                throw new Exception("Quantité insuffisante");
+            }
+            if (this.mesVentes.containsKey(p)){
+                this.mesVentes.put(p, this.mesVentes.get(p)+quantite);
+            }
+            else {
+                this.mesVentes.put(p, quantite);
+            }
+            this.mesProduits.put(p, this.mesProduits.get(p)-quantite);
+        }
+
+
 
     }
 

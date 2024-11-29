@@ -65,10 +65,5 @@ public class Client extends Compte{
         return valeur;
     }
 
-    public void suppressionCompte() {
-        GestionCompte.supprimerCompte(this);
-    }
-
-
 }
 

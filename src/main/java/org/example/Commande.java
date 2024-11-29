@@ -43,7 +43,7 @@ public class Commande {
 
     public void envoieProduits() throws Exception {
         for (Produit p : this.hashProduits.keySet()){
-            p.getMarchand().retirerQuantiteProduit(p, this.hashProduits.get(p));
+            p.getMarchand().venteProduit(p.getNomProduit(), this.hashProduits.get(p));
         }
     }
 }
