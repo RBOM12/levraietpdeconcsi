@@ -16,7 +16,9 @@ public class Commande {
         hashProduits = new HashMap<Produit, Integer>();
     }
 
-    public void addProduit(Produit p, int quantite){
+    public void addProduit(Marchand m, String nom, int quantite){
+
+        Produit p = m.getProduit(nom);
         if (this.hashProduits.containsKey(p)){
             this.hashProduits.put(p, this.hashProduits.get(p) + quantite);
         }

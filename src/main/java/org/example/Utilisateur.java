@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.HashMap;
 
-public class Utilisateur {
+public class Utilisateur  {
     private HashMap<String, Compte> hashComptes = new HashMap<String, Compte>();
 
     private Catalogue catalogue;
@@ -50,7 +50,7 @@ public class Utilisateur {
 
     public void voirProduitMarchands(Marchand marchand){
         System.out.println("Liste des produits du marchand");
-        marchand.getProduits();
+        marchand.presenterproduit();
     }
 
 }

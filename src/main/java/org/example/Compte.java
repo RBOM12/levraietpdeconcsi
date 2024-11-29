@@ -48,7 +48,8 @@ public class Compte {
         return adresse;
     }
 
-    public void voirCatalogue(){
-        System.out.println("Catalogue");
+    public void supprierCompte(Compte compte){
+
     }
+
 }
