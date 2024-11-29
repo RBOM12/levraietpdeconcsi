@@ -12,6 +12,7 @@ public class GestionCompte {
     public void ajouterCompte(Compte compte) {
         comptes.put(compte.getPseudo(), compte);
     }
+
     public void supprimerCompte(Compte compte) {
         comptes.remove(compte.getPseudo());
     }
@@ -51,17 +52,19 @@ public class GestionCompte {
     }
 
     public void getmarchand() {
+        System.out.println("Voici la liste des marchands inscrit sur le site:");
         for (Compte compte : comptes.values()) {
             if (compte instanceof Marchand) {
-                System.out.println(compte.getPseudo());
+                System.out.println("- "+compte.getPseudo());
             }
         }
     }
 
     public void getclients() {
+        System.out.println("Voici la liste des clients inscrit sur le site:");
         for (Compte compte : comptes.values()) {
             if (compte instanceof Client) {
-                System.out.println(compte.getPseudo());
+                System.out.println("- "+compte.getPseudo());
             }
         }
     }
@@ -89,6 +92,16 @@ public class GestionCompte {
             }
         }
     }
+    public Client recupunclient(String pseudo) {
+        if (!comptes.containsKey(pseudo)) {
+            return null;
+        }
+        Compte compte = comptes.get(pseudo);
+        return (Client) compte;
+    }
+
+
+
 
 
 

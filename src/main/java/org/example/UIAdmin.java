@@ -14,6 +14,8 @@ public class UIAdmin {
         System.out.println("2. Voir les clients");
         System.out.println("3. Modif un client");
         System.out.println("4. Modif un marchand");
+        System.out.println("5. Supprimer un client");
+        System.out.println("6. Supprimer un marchand");
         System.out.println("5. Se déconnecter");
         System.out.println("------------------------------------------");
 
@@ -31,12 +33,21 @@ public class UIAdmin {
                     break;
                 case 3:
                     System.out.println("Modif un client");
+
                     break;
                 case 4:
                     System.out.println("Modif un marchand");
                     break;
                 case 5:
-                    System.out.println("Se déconnecter");
+                    String nm = gUI.saisirString("Veuillez saisir le nom du client : ");
+                    supprimerClient(nm);
+                    break;
+                case 6:
+                    String nm1 = gUI.saisirString("Veuillez saisir le nom du marchand : ");
+                    supprimerMarchand(nm1);
+                    break;
+                case 7:
+                    System.out.println("Deconnexion, à bientôt");
                     a.deconnexion();
                     break;
                 default:
@@ -44,5 +55,14 @@ public class UIAdmin {
                     break;
             }
         }
+    }
+    public void supprimerMarchand(String m) {
+            Marchand m1= gC.recupunmarchand(m);
+            gC.supprimerCompte(m1);
+    }
+    public void supprimerClient(String m) {
+            Client c = gC.recupunclient(m);
+            gC.supprimerCompte(c);
+
     }
 }

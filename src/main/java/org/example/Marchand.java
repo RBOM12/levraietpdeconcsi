@@ -8,6 +8,7 @@ public class Marchand extends Compte  {
 
     HashMap<Produit,Integer> mesProduits = new HashMap<Produit,Integer>();
     HashMap<Produit,Integer> mesVentes = new HashMap<Produit,Integer>();
+    ArrayList<Client> mesClients = new ArrayList<Client>();
     GestionUI g = new GestionUI();
 
 
@@ -50,7 +51,7 @@ public class Marchand extends Compte  {
 
     }
 
-    public void venteProduit(String nom, int quantite) throws Exception {
+    public void venteProduit(String nom, int quantite,Client c) throws Exception {
         Produit p = getProduit(nom);
         if (this.mesProduits.containsKey(p)){
             if (this.mesProduits.get(p)<quantite){
@@ -63,6 +64,7 @@ public class Marchand extends Compte  {
                 this.mesVentes.put(p, quantite);
             }
             this.mesProduits.put(p, this.mesProduits.get(p)-quantite);
+            ajouterunclient(c);
         }
 
 
@@ -93,14 +95,6 @@ public class Marchand extends Compte  {
 
 
         this.mesProduits.put(p, q);
-    }
-
-
-    public void envoyerCommande (Commande c){
-        mesCommandes.add(c);
-    }
-    public void getCommandes(){
-
     }
 
     public void presenterproduit(){
@@ -146,6 +140,25 @@ public class Marchand extends Compte  {
             }
         }
         return null;
+    }
+
+    public void afficherVentes(){
+        System.out.println("Voici vos ventes : ");
+        for (Produit produit : this.mesVentes.keySet()){
+            System.out.println("- "+produit.getNomProduit()+" : "+this.mesVentes.get(produit));
+        }
+    }
+
+    public void ajouterunclient(Client c){
+        if (!this.mesClients.contains(c))
+            this.mesClients.add(c);
+    }
+
+    public void afficherClients(){
+        System.out.println("Voici vos clients : ");
+        for (Client client : this.mesClients){
+            System.out.println("- "+client.getPseudo());
+        }
     }
 
 
