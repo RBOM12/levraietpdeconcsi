@@ -33,10 +33,17 @@ public class UIAdmin {
                     break;
                 case 3:
                     System.out.println("Modif un client");
+                    String nm2 = gUI.saisirString("Veuillez saisir le nom du client : ");
+                    Client c = gC.recupunclient(nm2);
+                    gC.modifcompte(c);
+
 
                     break;
                 case 4:
                     System.out.println("Modif un marchand");
+                    String nm3 = gUI.saisirString("Veuillez saisir le nom du marchand : ");
+                    Marchand m = gC.recupunmarchand(nm3);
+                    gC.modifcompte(m);
                     break;
                 case 5:
                     String nm = gUI.saisirString("Veuillez saisir le nom du client : ");

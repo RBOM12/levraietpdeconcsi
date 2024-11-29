@@ -7,11 +7,5 @@ public class Administrateur extends Compte{
         super(nom, prenom, adresse, pseudo, mdp);
     }
 
-    public void supprimerCompte( Compte compte){
-        compte= null;
-    }
 
-    public void modifierCompte(Compte compte){
-
-    }
 }

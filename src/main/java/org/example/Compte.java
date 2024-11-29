@@ -51,5 +51,11 @@ public class Compte {
     public void supprierCompte(Compte compte){
 
     }
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+
+
 
 }

@@ -38,7 +38,8 @@ public class GestionCompte {
     public void initMarchands() {
         for (int i = 1; i <= 10; i++) {
             String nom = "m" + i;
-            Marchand marchand = new Marchand(nom, "email_" + nom + "@example.com", "adresse_" + nom, "siret_" + nom, "toto");
+            String prenom = "toto"+i;
+            Marchand marchand = new Marchand(nom,prenom , "adresse_" + nom, "siret_" + nom, "toto");
             comptes.put(nom, marchand);
         }
     }
@@ -55,7 +56,7 @@ public class GestionCompte {
         System.out.println("Voici la liste des marchands inscrit sur le site:");
         for (Compte compte : comptes.values()) {
             if (compte instanceof Marchand) {
-                System.out.println("- "+compte.getPseudo());
+                System.out.println("- " + compte.getPseudo());
             }
         }
     }
@@ -64,12 +65,12 @@ public class GestionCompte {
         System.out.println("Voici la liste des clients inscrit sur le site:");
         for (Compte compte : comptes.values()) {
             if (compte instanceof Client) {
-                System.out.println("- "+compte.getPseudo());
+                System.out.println("- " + compte.getPseudo());
             }
         }
     }
 
-    public void initialise(){
+    public void initialise() {
         initadim();
         initMarchands();
         initClients();
@@ -80,7 +81,7 @@ public class GestionCompte {
             return null;
         }
         Compte compte = comptes.get(pseudo);
-            return (Marchand) compte;
+        return (Marchand) compte;
     }
 
     public void afficherTousLesProduits() {
@@ -92,6 +93,7 @@ public class GestionCompte {
             }
         }
     }
+
     public Client recupunclient(String pseudo) {
         if (!comptes.containsKey(pseudo)) {
             return null;
@@ -100,10 +102,46 @@ public class GestionCompte {
         return (Client) compte;
     }
 
+    public void modifcompte(Compte c) {
+        System.out.println("Que voulez-vous modifier?");
+        System.out.println("1. Pseudo");
+        System.out.println("2. Mot de passe");
+        System.out.println("3. Prenom");
+        System.out.println("4. Adresse");
+        System.out.println("5. Nom");
+        System.out.println("6. annuler");
+        int choix = 0;
 
+        while (choix != 7) {
+            choix = new GestionUI().saisirChoix();
+            switch (choix) {
+                case 1:
+                    String pseudo = new GestionUI().saisirString("Veuillez saisir le nouveau pseudo : ");
+                    c.setPseudo(pseudo);
+                    break;
+                case 2:
+                    String mdp = new GestionUI().saisirString("Veuillez saisir le nouveau mot de passe : ");
+                    c.setMdp(mdp);
+                    break;
+                case 3:
+                    String prenom = new GestionUI().saisirString("Veuillez saisir le nouveau prenom : ");
+                    c.setPrenom(prenom);
+                    break;
+                case 4:
+                    String adresse = new GestionUI().saisirString("Veuillez saisir la nouvelle adresse : ");
+                    c.setAdresse(adresse);
+                    break;
+                case 5:
+                    String nom = new GestionUI().saisirString("Veuillez saisir le nouveau nom : ");
+                    c.setNom(nom);
+                    break;
+                case 6:
+                    break;
+                default:
+                    System.out.println("Choix invalide");
+                    break;
+            }
+        }
 
-
-
-
-
+    }
 }
