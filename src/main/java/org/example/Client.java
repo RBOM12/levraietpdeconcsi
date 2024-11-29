@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Client extends Compte{
     private Commande panier ;
-    private ArrayList<Commande> histoCommandes;
+    ArrayList<Commande> histoCommandes;
 
     public Client(String nom, String prenom, String adresse, String pseudo, String mdp) {
         super(nom, prenom, adresse, pseudo, mdp);
